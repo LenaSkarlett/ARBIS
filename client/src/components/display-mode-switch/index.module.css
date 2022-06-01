@@ -1,0 +1,15 @@
+.block {
+  display: flex;
+}
+
+.block label {
+  margin-left: 10px;
+}
+
+.default * {
+  fill: #C4C4C4;
+}
+
+.active * {
+  fill: #2E55A2;
+}

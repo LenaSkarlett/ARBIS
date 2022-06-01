@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.ourteam {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.description {
+  width: 90%;
+  max-width: 1000px;
+  margin: calc(2vw + 2vh + .5vmin) 0 calc(2.8vw + 2.8vh + .5vmin) 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(1vw + 1vh + .5vmin);
+  line-height: calc(1vw + 1vh + .5vmin);
+  text-align: center;
+  color: #7F7E7F;
+}
+
+.introduce {
+  width: 90%;
+  height: 28px;
+  margin-bottom: calc(4vw + 4vh + .5vmin);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(1.1vw + 1.1vh + .5vmin);
+  line-height: 28px;
+  text-align: center;
+  color: #2E55A2;
+}
+
+.block_information_about_workers {
+  display: flex;
+  justify-content: center;
+  margin-top: 91px;
+  width: 100%;
+  transition: .5s;
+}
+
+.photo_block {
+  display: flex;  
+  width: 300px;
+  height: 450px;
+  background-size: cover;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  margin: 50px 50px 50px 50px;
+  border-radius: 16px;
+  overflow: hidden;
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+}
+
+.all_information_about_workers {
+  display: flex; 
+  width: 1000px;
+  background: #FFFFFF;
+  border-radius: 20px;
+
+  box-shadow: 0px 0px 30px rgba(95, 95, 95, 0.15);
+} 
+
+.block_with_information {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 50%;
+}  
+
+.block {
+  margin-top: 58px;
+  margin-bottom: 40px;
+}
+
+.title {
+  width: 90%;
+  border-bottom: 2px solid rgba(46, 85, 162, 0.25);
+  height: 30px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #2E55A2;
+}
+
+.main_text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  word-wrap: break-word;
+  margin-top: 5px;
+  width: 90%;
+}  
+
+.about_sertificate {
+  margin-bottom: 58px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 56px;
+}
+
+.about_experience {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.photoFullName {
+  display: flex;
+  justify-content: start;
+}
+
+@media screen and (max-width: 1200px) {
+  .all_information_about_workers {
+    width: 73vw; 
+    display: flex; 
+  }
+  
+  .photo_block {
+    width: 230px; 
+    height: 390px;
+  }
+  .block_with_information {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .description {
+    font-size: 20px;
+    line-height: 23px;
+    width: 540px;
+  }
+  .introduce {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .all_information_about_workers {
+    width: 90vw;
+    margin-top: -30px;
+  }
+  .photo_block {
+    width: 200px; 
+    height: 200px; 
+    margin-top: 50px; 
+    margin-left: 50px; 
+    margin-right: 38px;
+  }
+
+  .block_with_information {
+    width: 60%;
+  }
+
+  .block {
+    margin-top: 58px;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-weight: 700; 
+    font-size: 3vw; 
+    white-space: nowrap;
+  }
+  .main_text {
+    width: 100%;
+    font-weight: 400; 
+    font-size: 2vw;
+    white-space: pre-wrap;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .ourteam {
+    margin-bottom: 91px;
+  }
+
+  .all_information_about_workers {
+    width: 85vw;
+    flex-direction: column;
+  }
+  .photo_block {
+    width: 100px; 
+    height: 100px; 
+    margin: 25px 10px 22px 10px;
+  }
+
+  .block_with_information {
+    width: 60%;
+  }
+ 
+  .title {
+    font-weight: 700; 
+    font-size: 11px;
+    margin-top: 0px;
+  }
+  .main_text {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #333333;
+  }
+
+  .about_experience {
+    width: 95%; 
+    margin-bottom: 25px;
+  }
+  .about_sertificate {
+    width: 95%;
+    margin-bottom: 0px;
+  }
+
+  .block {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .bottom {
+    margin-left: 21px;
+    margin-bottom: 23px;
+  }
+}

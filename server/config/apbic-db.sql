@@ -1,0 +1,22 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  login VARCHAR(32) UNIQUE NOT NULL,
+  password VARCHAR(512) NOT NULL,
+  refreshtoken VARCHAR(512)
+);
+
+CREATE TABLE workers (
+  id SERIAL PRIMARY KEY,
+  photo VARCHAR(512) UNIQUE NOT NULL,
+  fullname VARCHAR(2048) NOT NULL,
+  specialty VARCHAR(2048) NOT NULL,
+  experience VARCHAR(2048) NOT NULL,
+  certificates VARCHAR(2048) NOT NULL
+);
+
+CREATE TABLE landings (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(512) UNIQUE NOT NULL,
+  description VARCHAR(2048) NOT NULL,
+  workers VARCHAR(10000) NOT NULL
+);

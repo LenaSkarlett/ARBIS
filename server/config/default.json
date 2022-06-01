@@ -1,0 +1,10 @@
+{
+  "server": {
+    "port": 4000
+  },
+  "secrets": {
+    "access_token": ";SJHTgsiUHdPGS&GeT*&P#fASDJFGH8)AWFR^G0*^#ERG)*#^G%r08#$%YTIWUH%(4w",
+    "refresh_token": "GHASE*&Rf0pw&HYt-94h_(&@#TP*RIUFRYGSDU#T%GRg&*RT@(&%!&P(UHR!@*&gt!*&gilz;",
+    "cookie": "OSUHEDGTF*)W#PIYntKLS:HRtggf7d9punghdiprtuoZRSth)IWKJTYgmngIOY#T$%)rp"
+  }
+}

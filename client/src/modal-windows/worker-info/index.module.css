@@ -1,0 +1,217 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.window {
+  position: relative;
+  width: 400px;
+  height: min-content;
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.editBtn {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  width: 20px;
+  height: 20px;
+  fill: #2E55A280;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  fill: #2E55A2;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  fill: #EA242B;
+  cursor: pointer;
+}
+
+.form {
+  width: 90%;
+  height: 80%;
+  max-height: 80vh; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 40px auto 20px auto;
+}
+
+.form h1 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #2E55A2;
+  margin-bottom: 5px;
+}
+
+.form ul {
+  margin-bottom: 15px;
+}
+
+.form li {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.photo {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: #E4E5E7;
+  border-radius: 16px;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 24px;
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+}
+
+.nameAndSpecialty {
+  width: 55%;
+}
+
+.fullName,
+.roles,
+.projects,
+.certificates {
+  width: 99%;
+}
+
+.fullName input, 
+.roles input {
+  width: 99%;
+  margin-bottom: 8px;
+}
+
+.projects span, 
+.certificates span {
+  width: 99%;
+}
+
+.projects input, 
+.certificates input {
+  width: 99%;
+  margin-bottom: 15px;
+}
+
+.projects {
+  margin-top: 10px;
+}
+
+.specialty {
+  margin-left: 22px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  color: #333;
+}
+
+.buttons {
+  margin: auto;
+  width: 99%;
+  width: calc(150px + 150px + 10px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelBtn,
+.saveBtn,
+.errSaveBtn {
+  width: 150px;
+  height: 40px;
+  border-radius: 4px;
+  border: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  color: #333;
+  background-color: #E4E5E7;
+}
+
+.cancelBtn:hover {
+  background-color: #dfdfdf;
+}
+
+.saveBtn {
+  color: #FCFDFF;
+  background-color: #2E55A2;
+}
+
+.errSaveBtn {
+  color: #FCFDFF;
+  background-color: #e95b60;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 450px) {
+  .window {
+    width: 90%;
+  }
+  .form h1 {
+    font-size: 12px;
+    margin-bottom: 1px;
+  }
+  .form ul {
+    margin-bottom: 10px;
+  }
+  .form li {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .photo {
+    width: 100px;
+    height: 100px;
+  }
+  .buttons {
+    width: 100%;
+  }
+  .cancelBtn,
+  .saveBtn,
+  .errSaveBtn {
+    width: 49%;
+  }
+}

@@ -1,0 +1,80 @@
+.section {
+  margin: calc(6.5vw + 6.5vh + .5vmin) auto 0 auto;
+  align-items: center;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+}
+
+.workersColumns {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 27px;
+  grid-row-gap: 52px;
+}
+
+.workersLines {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.pagesList {
+  width: min-content;
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+}
+
+.pageNumber {
+  cursor: pointer;
+  margin: 4px 9px;
+}
+
+@media screen and (min-width: 1000px) {
+  .section {
+    margin: 152px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    margin-bottom: 10vw;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .header h1 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .header h1 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header h1 {
+    font-size: 12px;
+  }
+}

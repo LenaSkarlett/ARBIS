@@ -1,0 +1,383 @@
+.column {
+  position: relative;
+  width: 172px;
+  height: 256px;
+  border-radius: 1vw;
+  box-shadow: 0px 8px 25px rgba(95, 95, 95, 0.15);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.column:hover {
+  box-shadow: 0px 8px 25px rgba(46, 85, 162, 0.25);
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(95, 95, 95, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.line:hover {
+  background-color: #CDF0FF;
+  box-shadow: 0px 2px 10px rgba(46, 85, 162, 0.25);
+  transition: box-shadow 0.3s;
+}
+
+.selectedColumn {
+  box-shadow: 0px 0px 5px rgba(95, 95, 95, 0.5);
+  transition: box-shadow 0.3s;
+}
+
+.selectedColumn:hover {
+  box-shadow: 0px 0px 5px rgba(95, 95, 95, 0.5);
+  transition: box-shadow 0.3s;
+}
+
+.selectedLine {
+  background-color: #2E55A2;
+  box-shadow: 0px 0px 5px rgba(95, 95, 95, 0.5);
+  transition: box-shadow 0.3s;
+}
+
+.selectedLine:hover {
+  background-color: #2E55A2;
+  box-shadow: 0px 0px 5px rgba(95, 95, 95, 0.5);
+  transition: box-shadow 0.3s;
+}
+
+.functionIconColumn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  fill: rgba(95, 95, 95, 0.25);
+}
+
+.functionIconColumn:hover {
+  fill: #2E55A2;
+}
+
+.functionIconLine {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 12px;
+  right: 6px;
+  fill: rgba(95, 95, 95, 0.25);
+}
+
+.functionIconLine:hover {
+  fill: #2E55A2;
+}
+
+.functionIconLineSelected {
+  fill: #5881d4;
+}
+
+.functionIconLineSelected:hover {
+  fill: #c4d8ff;
+}
+
+.functionsMenuColumn {
+  z-index: 1;
+  position: absolute;
+  top: 40px;
+  right: -65px;
+}
+
+.functionsMenuLine {
+  z-index: 1;
+  position: absolute;
+  top: 45px;
+  right: -65px;
+}
+
+.triangle {
+  fill: #fff;
+  position: absolute;
+  top: -6px;
+  left: 10px;
+}
+
+.functionsMenuBody {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(95, 95, 95, 0.5);
+  padding: 5px 0;
+}
+
+.functionsList {
+  list-style: none;
+}
+
+.functionBtn {
+  border: 0;
+  background-color: #fff;
+  width: 100%;
+  text-align: left;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #333;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.functionBtn:hover {
+  background-color: #CCE8FF;
+}
+
+.shortInfoColumn {
+  overflow: hidden;
+}
+
+.shortInfoLine{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 50px;
+  border-radius: 10px 0 0 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #fff;
+  background-color: #2E55A2;
+}
+
+.photo {
+  width: 100%;
+  height: 140px;
+  background-position: 50% 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 10px 0 0;
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+}
+
+.fullNameColumn {
+  margin: 14px auto 7px 7px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15.5px;
+  line-height: 18px;
+  color: #2E55A2;
+}
+
+.fullNameLine {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #2E55A2;
+  margin-left: 3%;
+}
+
+.selectedFullNameLine {
+  color: #fff;
+}
+
+.specialtyColumn {
+  margin-left: 7px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #333333b3;
+}
+
+.specialtyColumn li {
+  margin-left: 20px;
+}
+
+.specialtyLine {
+  display: flex;
+  list-style: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #333333b3;
+}
+
+.specialityLine_1 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 130px; 
+  height: 50px;
+  margin-right: 35px;
+}
+
+.specialityLine_2 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 130px; 
+  height: 50px;
+  margin-right: 35px;
+}
+
+.specialityLine_3 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 130px; 
+  height: 50px;
+  margin-right: 35px;
+}
+
+.specialityLine_4 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 130px; 
+  height: 50px;
+  margin-right: 35px;
+}
+
+.check {
+  position: absolute;
+  right: 8px;
+  bottom: 5px;
+  width: 25px;
+  height: 25px;
+  fill: #2E55A2;
+}
+
+@media screen and (max-width: 1100px) {
+  .specialityLine_4 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .specialityLine_3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .specialityLine_2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .selected,
+  .column {
+    width: 34vw;
+    height: 53vw;
+    border-radius: 3vw;
+  }
+  .photo {
+    height: 28vw;
+  }
+  .infoIcon {
+    width: 1.6vw;
+    height: 1.6vw;
+    top: 1vw;
+    right: 0.9vw;
+  }
+  .fullNameColumn {
+    margin: 1.5vw auto 1.5vw 1vw;
+    font-size: 3.4vw;
+  }
+  .specialtyColumn {
+    margin-left: 0.4vw;
+    font-size: 2.5vw;
+    line-height: 3vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .line {
+    height: 40px;
+  }
+  .index {
+    width: 35px;
+    font-size: 20px;
+  }
+  .fullNameLine {
+    width: 100px;
+    line-height: 15px;
+    font-size: 16px;
+  }
+  .functionsMenuLine {
+    top: 40px;
+    right: -72px;
+  }
+  .specialityLine_1 {
+    width: 110px;
+    font-size: 12px;
+    margin-right: 23px;
+  }
+  .functionIconLine {
+    top: 7px;
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .line {
+    height: 35px;
+  }
+  .index {
+    width: 30px;
+    font-size: 20px;
+  }
+  .fullNameLine {
+    line-height: 14px;
+    font-size: 14px;
+  }
+  .functionsMenuLine {
+    top: 35px;
+    right: -74px;
+  }
+  .specialityLine_1 {
+    width: 110px;
+    font-size: 14px;
+    margin-right: 25px;
+  }
+  .functionIconLine {
+    top: 7px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}

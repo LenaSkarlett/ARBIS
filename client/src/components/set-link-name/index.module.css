@@ -1,0 +1,148 @@
+.section {
+  margin: 90px auto 0px auto;
+  align-items: center;
+  height: min-content;
+  width: 80%;
+  max-width: 1000px;
+  margin-bottom: 80px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+}
+
+.hostName {
+  color: #7F7E7F;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.linkName {
+  border: 0;
+  border-bottom: 1px solid #DCE1E6;
+  color: #7F7E7F;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  transition: 0.3s;
+}
+
+.linkName:focus {
+  color: #333;
+  border-color: #333;
+}
+
+.linkNameExists {
+  border: 0;
+  border-bottom: 1px solid #DD6165;
+  color: #DD6165;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  transition: 0.3s;
+}
+
+.linkNameExists:focus {
+  color: #EA242B;
+  border-color: #EA242B;
+}
+
+.warningMessage {
+  display: block;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #DD6165;
+  padding-top: 11px;
+}
+
+.applyChanges {
+  border: 0;
+  background-color: #ffffff00;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #DD6165;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.applyChanges:hover {
+  color: #7F7E7F;
+}
+
+@media screen and (max-width: 560px) {
+  .hostName {
+    font-size: 16px;
+  }
+  .linkName, 
+  .linkNameExists {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    margin-bottom: 10vw;
+  }
+  .hostName {
+    font-size: 14px;
+  }
+  .linkName,
+  .linkNameExists {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .header h1 {
+    font-size: 16px;
+  }
+  .hostName {
+    font-size: 12px;
+  }
+  .linkName,
+  .linkNameExists {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .header h1 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header h1 {
+    font-size: 12px;
+  }
+  .linkName, 
+  .linkNameExists {
+    width: 30%;
+  }
+}

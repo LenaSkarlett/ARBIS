@@ -1,0 +1,40 @@
+.align {
+  margin: 0px auto 130px auto;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.button {
+  background-color: #2E55A2;
+  border: 0;
+  width: 200px;
+  height: 55px;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  color: #FCFDFF;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #294d96;
+}
+
+.errSaveBtn {
+  width: 200px;
+  height: 55px;
+  border-radius: 4px;
+  border: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  cursor: pointer;
+  color: #FCFDFF;
+  background-color: #e95b60;
+  cursor: not-allowed;
+}

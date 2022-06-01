@@ -1,0 +1,95 @@
+.section {
+  margin: 90px auto 80px auto;
+  align-items: center;
+  height: min-content;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+}
+
+.hostName {
+  color: #333;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.descriptionField {
+  border: 0;
+  border: 1px solid #DCE1E6;
+  border-radius: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #7F7E7F;
+  line-height: 21px;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.descriptionField::placeholder {
+  color: #7F7E7F;
+}
+
+.descriptionField:focus {
+  border-color: #333;
+  color: #333;
+}
+
+@media screen and (max-width: 780px) {
+  .descriptionField {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    margin-bottom: 10vw;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .header h1 {
+    font-size: 16px;
+  }
+  .descriptionField {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .header h1 {
+    font-size: 14px;
+  }
+  .descriptionField {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header h1 {
+    font-size: 12px;
+  }
+  .descriptionField {
+    font-size: 12px;
+  }
+}
+
