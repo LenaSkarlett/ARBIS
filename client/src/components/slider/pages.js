@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { BsCircleFill } from 'react-icons/bs';
 
 const Pages = ({ page, setPage, slides, slidesToShow }) => {

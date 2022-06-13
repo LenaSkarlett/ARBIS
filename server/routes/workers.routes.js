@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import workersController from './../controllers/workers.controller.js';
-import path from 'path';
+import path from 'node:path';
 import multer from 'multer';
 import authMiddleware from './../middlewares/auth.middleware.js';
 
@@ -25,7 +25,6 @@ router.route('/')
   
 
 router.route('/:id')
-  .get(authMiddleware, workersController.get)
   .delete(authMiddleware, workersController.delete)
   .put(authMiddleware, upload.single('photo'), workersController.edit);
 

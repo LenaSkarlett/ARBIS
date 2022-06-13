@@ -1,4 +1,3 @@
-import config from 'config';
 import workersService from './../services/workers.service.js';
 
 class WorkersController {
@@ -15,21 +14,17 @@ class WorkersController {
     if (await workersService.exists(photo, fullname)) {
       return response
         .status(400)
-        .json('Login already taken.');
+        .json('Such an worker already exists.');
     }
 
-    const photoPath = `${request.protocol}://${request.host}:${config.get('server.port')}/${photo.path.slice(7, photo.path.length)}`;
+    const port = process.env.SERVER_PORT || 4000;
+    const photoPath = `${request.protocol}://${request.host}:${port}/${photo.path.slice(7, photo.path.length)}`;
 
     return response.status(200).json(await workersService.create(photoPath, fullname, specialty, experience, certificates));
   }
 
   async getAll(request, response) {
     response.status(200).json(await workersService.getAll());
-  }
-
-  async get(request, response) {
-    const { id } = request.params;
-    response.status(200).json(await workersService.get(id));
   }
 
   async edit(request, response) {
@@ -43,7 +38,8 @@ class WorkersController {
 
     let newPhotoPath = '';
     if (!photoPath) {
-      newPhotoPath = `${request.protocol}://${request.host}:${config.get('server.port')}/${photo.path.slice(7, photo.path.length)}`;
+      const port = process.env.SERVER_PORT || 4000;
+      newPhotoPath = `${request.protocol}://${request.host}:${port}/${photo.path.slice(7, photo.path.length)}`;
     }
 
     response.status(200).json(await workersService.edit(id, newPhotoPath ? newPhotoPath : photoPath, fullname, specialty, experience, certificates));

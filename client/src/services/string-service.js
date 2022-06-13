@@ -15,24 +15,20 @@ class StringService {
     return str.split('\n');
   }
 
-  clearString(str) {
-    return this.stringToArray(str).join('\n');
-  }
-
-  getLimitedString(text, maxlength, lastSymbols = 0, isBeautifulEnding = true, textMissingWarning) {
+  getLimitedString(text, maxLength, lastSymbols = 0, isBeautifulEnding = true, textMissingWarning) {
     if (text.length === 0 && textMissingWarning) {
       return textMissingWarning;
     }
   
-    if (text.length <= maxlength) {
+    if (text.length <= maxLength) {
       return text;
     }
   
     if (lastSymbols) {
-      return `${text.substring(0, maxlength)}...${text.substring(text.length - lastSymbols)}`;
+      return `${text.substring(0, maxLength)}...${text.substring(text.length - lastSymbols)}`;
     }
   
-    let limitedString = text.toString().substring(0, maxlength)
+    let limitedString = text.toString().substring(0, maxLength)
   
     if (isBeautifulEnding && !lastSymbols) {
       let lastSymbolsAfterSpace = limitedString.split(" ").slice(-1)[0];

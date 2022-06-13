@@ -26,9 +26,6 @@ class UsersService {
     }
 
     const user = await this.get(login);
-    if (!user) {
-      return null;
-    }
 
     const validPassword = this.validatePassword(password, user.password);
     if (!validPassword) {
@@ -39,7 +36,11 @@ class UsersService {
     const refreshToken = tokensService.generateRefresh(payload);
     await tokensService.saveRefresh(user.id, refreshToken);
 
-    return { ...user, refreshToken: refreshToken };
+    return { 
+      ...user, 
+      refreshToken: refreshToken, 
+      accessToken: tokensService.generateAccess(payload) 
+    };
   }
 
   getHashPassword(password) {

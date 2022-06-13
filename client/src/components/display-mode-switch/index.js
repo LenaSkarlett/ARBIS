@@ -6,7 +6,7 @@ import { ReactComponent as ManyLines } from './../../assets/many-lines.svg';
 import { ReactComponent as FewLines } from './../../assets/few-lines.svg';
 import Media from 'react-media';
 import workersStore from './../../store';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const DisplayModeSwitch = observer(() => {
   const [currentMode, setCurrentMode] = useState('columns');

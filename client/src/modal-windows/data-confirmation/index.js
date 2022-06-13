@@ -3,21 +3,23 @@ import { IoClose } from 'react-icons/io5';
 import $api from './../../http/index';
 import workersStore from './../../store';
 import Worker from './../../components/worker';
-import SliderDataConfirmation from './../../components/slider-data-confirmation';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Slider from './../../components/slider';
 
 const DataConfirmationModalWindow = ({ status }) => {
+  const [description, setDescription] = useState('Мы движемся вперед, чтобы освободить Вас от рутины.\nЧтобы Вы могли наслаждаться жизнью.');
   useEffect(() => {
+    setDescription(defaultDescription => workersStore.description ? workersStore.description : defaultDescription)
     document.getElementsByTagName('body')[0].setAttribute('style', 'overflow: hidden;');
   }, [status]);
 
   function saveToDatabase() {
     $api.post(`/landing/${workersStore.link}`, {
       workers: workersStore.selectedWorkers,
-      description: workersStore.description
+      description: description
     })
       .then(response => {
-        window.open(`http://localhost:3000/${workersStore.link}`, '_blank');
+        window.open(`${process.env.REACT_APP_BASE_URL}/${workersStore.link}`, '_blank');
         window.location.reload();
       })
       .catch(error => console.log(error));
@@ -34,27 +36,45 @@ const DataConfirmationModalWindow = ({ status }) => {
         <IoClose className={styles.closeBtn} onClick={closeModalWindow} />
         <div className={styles.data}>
           <h1 className={styles.mainHeader}>Проверьте, всё верно?</h1>
-          <SliderDataConfirmation 
+          <Slider
             slides={
               workersStore.selectedWorkers.map((worker) => 
                 <Worker
                   worker={worker} 
-                  clickAction={() => null} 
-                  isSelected={() => null}
                 />
               )
             }
             slidesOnPage={5}
             center={true}
+            breakpoints={[
+              {
+                minWidth: 1230,
+                slidesOnPage: 5
+              },
+              {
+                minWidth: 1000,
+                maxWidth: 1229,
+                slidesOnPage: 4
+              },
+              {
+                minWidth: 749,
+                maxWidth: 999,
+                slidesOnPage: 3
+              },
+              {
+                maxWidth: 749,
+                slidesOnPage: 2
+              }
+            ]}
           />
 
+          <pre className={styles.description}>{description}</pre>
           <address 
-            style={{marginBottom: !workersStore.description ? '58px' : '10px'}} 
             className={styles.link}
           >
-            https://localhost:3000/{workersStore.link}
+            {process.env.REACT_APP_BASE_URL}/{workersStore.link}
           </address>
-          <span className={styles.description}>{workersStore.description}</span>
+          
 
           <div className={styles.buttons}>
             <input className={`${styles.button} ${styles.cancel}`} onClick={closeModalWindow} type="button" value="Отмена" />

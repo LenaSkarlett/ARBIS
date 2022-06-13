@@ -3,7 +3,7 @@ import { IoClose } from 'react-icons/io5';
 import stringService from './../../services/string-service';
 import EditWorkerModalWindow from './../edit-worker';
 import { AiFillEdit } from 'react-icons/ai';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const WorkerInfoModalWindow = ({ worker, status }) => {
   const [isEdit, setIsEdit] = useState(false);

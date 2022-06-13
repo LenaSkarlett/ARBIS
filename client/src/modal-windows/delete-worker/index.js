@@ -3,18 +3,12 @@ import { IoClose } from 'react-icons/io5';
 import $api from './../../http/index';
 import workersStore from './../../store';
 import Worker from './../../components/worker';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const DeleteWorkerModalWindow = ({ worker, status }) => {
   useEffect(() => {
-    if (status) {
-      console.log(document.getElementsByTagName('body')[0]);
-      document.getElementsByTagName('body')[0].setAttribute('style', 'overflow: hidden;');
-    }
-    else {
-      document.getElementsByTagName('body')[0].setAttribute('style', '');
-    }
-  }, [status]);
+    document.getElementsByTagName('body')[0].setAttribute('style', 'overflow: hidden;');
+  });
 
   function deleteWorker(event) {
     $api.delete(`/workers/${worker.id}`)

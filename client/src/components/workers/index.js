@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Worker from './../worker';
 import $api from './../../http';
 import DisplayModeSwitch from './../display-mode-switch';
@@ -55,9 +55,30 @@ const Workers = observer(() => {
               clickAction={() => changeActive(worker)} 
               isSelected={() => isSelected(worker)}
               showFunctionMenu={true}
+              mode={workersStore.displayMode}
             />
           ),
           <AddNewWorker />
+        ]}
+        breakpoints={[
+          {
+            minWidth: 1230,
+            slidesOnPage: 15
+          },
+          {
+            minWidth: 1000,
+            maxWidth: 1229,
+            slidesOnPage: 12
+          },
+          {
+            minWidth: 750,
+            maxWidth: 999,
+            slidesOnPage: 9
+          },
+          {
+            maxWidth: 749,
+            slidesOnPage: 4
+          }
         ]}
         reverse={false}
       />

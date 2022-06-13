@@ -1,10 +1,9 @@
 import jwt from 'jsonwebtoken';
-import config from 'config';
-import postgre from './../config/db/postgres.js';
+import postgres from './../config/db/postgres.js';
 
 class TokensService {
-  #secretAccess = config.get('secrets.access_token');
-  #secretRefresh = config.get('secrets.refresh_token');
+  #secretAccess = process.env.SECRETS_ACCESS_TOKEN || 'SECRETS_ACCESS_TOKEN_KEY';
+  #secretRefresh = process.env.SECRETS_REFRESH_TOKEN || 'SECRETS_REFRESH_TOKEN_KEY';
 
   generateAccess(payload) {
     return jwt.sign(payload, this.#secretAccess, { expiresIn: '30m'});
@@ -33,13 +32,25 @@ class TokensService {
   }
 
   async saveRefresh(userId, token) {
-    return( await postgre.query(
-      `UPDATE users SET refreshToken = $1 WHERE id = $2`,
-      [token, userId])).rowCount > 0;
+    return (await postgres.query(
+      `UPDATE users SET refreshtoken = $1 WHERE id = $2`,
+      [token, userId]
+    )).rowCount > 0;
   }
 
-  async refresh(refreshToken) {
-    const payload = this.verifyRefresh(refreshToken);
+  async checkRefreshInDatabase(token) {
+    return (await postgres.query(
+      `SELECT id FROM users WHERE refreshtoken = $1`,
+      [token]
+    )).rowCount > 0;
+  }
+
+  async refresh(token) {
+    if (!this.checkRefreshInDatabase(token)) {
+      return null;
+    }
+    
+    const payload = this.verifyRefresh(token);
     if (!payload || typeof(payload) === 'string') {
       return null;
     }

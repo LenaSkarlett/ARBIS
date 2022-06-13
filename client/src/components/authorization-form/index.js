@@ -1,12 +1,10 @@
 import styles from './index.module.css';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { BsCircleFill } from 'react-icons/bs';
-
 import $api from './../../http';
 
-const Validation = {
+const colors = {
   correct: '#49C68A',
   error: '#C64949',
   default: '#ffffff00'
@@ -38,44 +36,57 @@ const passwordErrors = {
   }
 };
 
-function Authorization() {
+function AuthorizationForm() {
   const navigate = useNavigate();
-  const {register, handleSubmit, reset, formState: {errors}} = useForm({
-    mode: 'onChange',
-    reValidateMode: 'onChange',
-    defaultValues: {},
-    resolver: undefined,
-    context: undefined,
-    criteriaMode: "all",
-    shouldFocusError: true,
-    shouldUnregister: true,
-  }); 
+  const [login, setLogin] = useState({
+    value: '',
+    color: colors.default,
+    error: null
+  });
+  const [password, setPassword] = useState({
+    value: '',
+    color: colors.default,
+    error: null
+  });
 
-  const [loginColor, setLoginColor] = useState(Validation.error);
-  const [passwordColor, setPasswordColor] = useState(Validation.error);
-
-  function setValidationLoginColor(event) {
-    if (event.target.value.length < 4) {
-      setLoginColor(Validation.error);
+  function validateLogin(event) {
+    if (!event.target.value && loginErrors.required.value) {
+      setLogin((prev) => ({ ...prev, color: colors.error, error: loginErrors.required.message }));
     }
+    else if (event.target.value.length < loginErrors.minLength.value) {
+      setLogin((prev) => ({ ...prev, color: colors.error, error: loginErrors.minLength.message }));
+    }
+    else if (event.target.value.length > loginErrors.maxLength.value) {
+      setLogin((prev) => ({ ...prev, color: colors.error, error: loginErrors.maxLength.message }));
+    } 
     else {
-      setLoginColor('#49C68A');
+      setLogin((prev) => ({ ...prev, color: colors.correct, error: null }));
     }
+    setLogin((prev) => ({ ...prev, value: event.target.value }));
   }
 
-  function setValidationPasswordColor(event) {
-    if (event.target.value.length < 8) {
-      setPasswordColor(Validation.error);
+  function validatePassword(event) {
+    if (!event.target.value && passwordErrors.required.value) {
+      setPassword((prev) => ({ ...prev, color: colors.error, error: passwordErrors.required.message }));
     }
+    else if (event.target.value.length < passwordErrors.minLength.value) {
+      setPassword((prev) => ({ ...prev, color: colors.error, error: passwordErrors.minLength.message }));
+    }
+    else if (event.target.value.length > passwordErrors.maxLength.value) {
+      setPassword((prev) => ({ ...prev, color: colors.error, error: passwordErrors.maxLength.message }));
+    } 
     else {
-      setPasswordColor(Validation.correct);
+      setPassword((prev) => ({ ...prev, color: colors.correct, error: null }));
     }
+    setPassword((prev) => ({ ...prev, value: event.target.value }));
   }
 
-  function signin(fields) {
+  function signin(event) {
+    event.preventDefault();
+
     $api.post('/auth', {
-      login: fields.login,
-      password: fields.password
+      login: login.value,
+      password: password.value
     })
       .then((response) => {
         if (response.status === 200) {
@@ -85,33 +96,31 @@ function Authorization() {
       .catch((error) => console.log(error));
   }
 
-  function logining() {
-    if (loginColor === Validation.correct && passwordColor === Validation.correct) {
-      return <input className={styles.signIn} type="submit" value="Войти"/>
-    }
-    return <></>
-  }
+  const isCorrectFields = () => login.color === colors.correct && password.color === colors.correct;
 
   return (
     <>
-      <form className={styles.mainBlock} onSubmit={handleSubmit(signin)}>
-        <h1 className={styles.authHeader}>Авторизуйтесь</h1>
-        <label className={styles.header}>Логин
+      <form className={styles.mainBlock} onSubmit={signin}>
+        <h1 className={styles.authHeader}>
+          Авторизуйтесь
+        </h1>
+        <label className={styles.header}>
+          Логин
           <div className={styles.fieldBlock}>
             <input 
               type="text"
               className={styles.field}
-              {...register('login', loginErrors)}
+              value={login.value}
               autoComplete='off' 
               spellCheck='false'
-              onChange={event => setValidationLoginColor(event)}
+              onChange={validateLogin}
             />
             <BsCircleFill 
               className={styles.circle} 
               style={{
                 width: '15px',
                 height: '15px',
-                fill: loginColor,
+                fill: login.color,
               }} 
             />
           </div>
@@ -123,33 +132,40 @@ function Authorization() {
             <input 
               type="password"
               className={styles.field}
-              {...register('password', passwordErrors)}
+              value={password.value}
               autoComplete='off' 
               spellCheck='false'
-              onChange={event => setValidationPasswordColor(event)}
+              onChange={validatePassword}
             />
             <BsCircleFill 
               className={styles.circle} 
               style={{
                 width: '15px',
                 height: '15px',
-                fill: passwordColor,
+                fill: password.color,
               }} 
             />
           </div>
         </label>
         
-        {errors &&
+        {login.error ?
           <span className={styles.error}>
-            {errors[Object.keys(errors)[0]]?.message} 
+            {login.error} 
+          </span>
+        : password.error ? 
+          <span className={styles.error}>
+            {password.error} 
+          </span>
+        :
+          <span className={styles.error}>
+            {isCorrectFields() && 
+              <input className={styles.signIn} type="submit" value="Войти"/>
+            }
           </span>
         }
-        <span className={styles.error}>
-          {logining()}
-        </span>
       </form>
     </>
   );
 }
 
-export default Authorization;
+export default AuthorizationForm;

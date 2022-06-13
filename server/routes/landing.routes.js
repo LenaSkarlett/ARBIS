@@ -8,4 +8,6 @@ router.route('/:landingName')
   .post(authMiddleware, landingController.saveLandingInfo)
   .get(landingController.getLandingInfo);
 
+router.get('/', authMiddleware, landingController.getLandingsLinks);
+
 export default router;

@@ -44,7 +44,7 @@ class UsersController {
     return response
       .status(200)
       .json({
-        'accessToken': tokensService.generateAccess({ userId: user.id })
+        'accessToken': user.accessToken
       });
   }
 

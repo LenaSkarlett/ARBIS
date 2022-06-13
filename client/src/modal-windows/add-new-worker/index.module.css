@@ -40,7 +40,8 @@
   max-height: 80vh; 
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 40px auto 36px auto;
+  padding-right: 10px;
+  margin: 40px 10px 36px auto;
 }
 
 .form::-webkit-scrollbar {

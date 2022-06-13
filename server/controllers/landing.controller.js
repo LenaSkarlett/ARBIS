@@ -23,6 +23,16 @@ class LandingController {
 
     return response.status(200).json(landingInfo);
   }
+
+  async getLandingsLinks(request, response) {
+    const links = await landingService.getLinks();
+
+    if (!links) {
+      return response.status(500).json('Failed to send existing links');
+    }
+
+    return response.status(200).json(links);
+  }
 }
 
 export default new LandingController();

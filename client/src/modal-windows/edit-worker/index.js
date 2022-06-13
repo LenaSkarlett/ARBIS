@@ -1,18 +1,17 @@
 import styles from './index.module.css';
 import { useEffect } from 'react';
 import { GoPerson } from 'react-icons/go';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import $api from './../../http/index';
 import TextareaAutosize from 'react-textarea-autosize';
-import stringService from './../../services/string-service';
 
 const EditWorkerModalWindow = ({ worker, status }) => {
   const [photo, setPhoto] = useState(null);
   const [fullName, setFullName] = useState(worker.fullname);
-  const [specialty, setSpecialty] = useState(stringService.clearSpecialty(worker.specialty));
-  const [experience, setExperience] = useState(stringService.clearString(worker.experience));
-  const [certificates, setCertificates] = useState(stringService.clearString(worker.certificates));
+  const [specialty, setSpecialty] = useState(worker.specialty);
+  const [experience, setExperience] = useState(worker.experience);
+  const [certificates, setCertificates] = useState(worker.certificates);
   const [toSave, setToSave] = useState(true);
 
   useEffect(() => {
@@ -120,7 +119,6 @@ const EditWorkerModalWindow = ({ worker, status }) => {
 
     value = value.replace(/● /gi, '').replace(/\n/gi, '\n● '); 
 
-    // Добавляем пункт в начале строки при первом вводе юзера
     if (value[0] !== '●' && value.length > 0) {
       value = `● ${value}`; 
     }

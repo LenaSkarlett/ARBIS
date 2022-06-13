@@ -1,11 +1,14 @@
 import styles from './index.module.css';
-import Logo from "./../../assets/logo.svg";
+import { ReactComponent as Logo } from "./../../assets/logo.svg";
+import React from 'react';
 
-const Header = ({text, mainInfo}) => {
+const Header = ({ text, mainInfo }) => {
   return (
     <header className={styles.header}>
-      <img className={styles.logo} src={Logo} alt="logo" />
-      <h1 className={styles.text}>{text}<br /><b>{mainInfo}</b></h1>
+      <Logo className={styles.logo} />
+      <h1 className={styles.text}>{text}<br />
+        <b>{mainInfo}</b>
+      </h1>
     </header>
   );
 }

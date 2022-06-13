@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Slides = ({ slides, direction, page, slidesToShow, reverse, center }) => {
   const [slidesLimit, setSlidesLimit] = useState({ first: 0, last: 0 });

@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { useEffect } from 'react';
 import { GoPerson } from 'react-icons/go';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import $api from '../../http/index';
 import TextareaAutosize from 'react-textarea-autosize';
@@ -111,7 +111,6 @@ const AddNewWorkerModalWindow = ({ status }) => {
 
     value = value.replace(/● /gi, '').replace(/\n/gi, '\n● '); 
 
-    // Добавляем пункт в начале строки при первом вводе юзера
     if (value[0] !== '●' && value.length > 0) {
       value = `● ${value}`; 
     }

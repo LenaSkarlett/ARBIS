@@ -45,8 +45,17 @@
   transition: .5s;
 }
 
+.block_information_about_workers ul {
+  margin-top: 12px;
+}
+
+.specialtyUl {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
 .photo_block {
-  display: flex;  
+  display: flex;
   width: 300px;
   height: 450px;
   background-size: cover;
@@ -62,20 +71,20 @@
 }
 
 .all_information_about_workers {
-  display: flex; 
+  display: flex;
   width: 1000px;
   background: #FFFFFF;
   border-radius: 20px;
 
   box-shadow: 0px 0px 30px rgba(95, 95, 95, 0.15);
-} 
+}
 
 .block_with_information {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   width: 50%;
-}  
+}
 
 .block {
   margin-top: 58px;
@@ -83,7 +92,7 @@
 }
 
 .title {
-  width: 90%;
+  width: 110%;
   border-bottom: 2px solid rgba(46, 85, 162, 0.25);
   height: 30px;
 
@@ -96,17 +105,30 @@
   color: #2E55A2;
 }
 
+.specialtyText {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #333333;
+  word-wrap: break-word;
+  margin-top: 8px;
+  width: 90%;
+}
+
 .main_text {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 16px;
   color: #333333;
   word-wrap: break-word;
-  margin-top: 5px;
-  width: 90%;
-}  
+  margin-top: 8px;
+  width: 110%;
+  list-style-type: none;
+}
 
 .about_sertificate {
   margin-bottom: 58px;
@@ -128,16 +150,26 @@
 
 @media screen and (max-width: 1200px) {
   .all_information_about_workers {
-    width: 73vw; 
-    display: flex; 
+    width: 73vw;
+    display: flex;
   }
-  
+
   .photo_block {
-    width: 230px; 
+    width: 230px;
     height: 390px;
   }
+
   .block_with_information {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .title {
+    width: 100%;
+  }
+  .main_text {
+    width: 100%;
   }
 }
 
@@ -147,6 +179,7 @@
     line-height: 23px;
     width: 540px;
   }
+
   .introduce {
     font-size: 24px;
     line-height: 28px;
@@ -158,11 +191,12 @@
     width: 90vw;
     margin-top: -30px;
   }
+
   .photo_block {
-    width: 200px; 
-    height: 200px; 
-    margin-top: 50px; 
-    margin-left: 50px; 
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
     margin-right: 38px;
   }
 
@@ -176,19 +210,55 @@
   }
 
   .title {
-    font-weight: 700; 
-    font-size: 3vw; 
+    font-weight: 700;
+    font-size: 3vw;
     white-space: nowrap;
   }
+
+  .specialtyText {
+    width: 120%;
+    font-weight: 400;
+    font-size: 2vw;
+    white-space: pre-wrap;
+  }
+
   .main_text {
     width: 100%;
-    font-weight: 400; 
+    font-weight: 400;
     font-size: 2vw;
     white-space: pre-wrap;
   }
 }
 
+@media screen and (max-width: 920px) {
+  .title {
+    width: 90%;
+  }
+  .main_text {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .title {
+    width: 85%;
+  }
+  .main_text {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .specialtyUl {
+    margin-left: 25px;
+  }
+}
+
 @media screen and (max-width: 530px) {
+  .specialtyUl {
+    margin-left: 22px;
+  }
+
   .ourteam {
     margin-bottom: 91px;
   }
@@ -197,32 +267,46 @@
     width: 85vw;
     flex-direction: column;
   }
+
   .photo_block {
-    width: 100px; 
-    height: 100px; 
-    margin: 25px 10px 22px 10px;
+    width: 100px;
+    height: 100px;
+    margin: 25px 21px 22px 21px;
   }
 
   .block_with_information {
     width: 60%;
   }
- 
+
   .title {
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 11px;
     margin-top: 0px;
   }
+
+  .all_information_about_workers ul {
+    margin-top: 5px;
+  }
+
+  .specialtyText {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #333333;
+  }
+
   .main_text {
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
-  color: #333333;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #333333;
   }
 
   .about_experience {
-    width: 95%; 
+    width: 95%;
     margin-bottom: 25px;
   }
+
   .about_sertificate {
     width: 95%;
     margin-bottom: 0px;
@@ -232,8 +316,17 @@
     margin-top: 25px;
     margin-bottom: 25px;
   }
+
   .bottom {
     margin-left: 21px;
     margin-bottom: 23px;
+  }
+
+  .title {
+    width: 97%;
+  }
+
+  .main_text {
+    width: 97%;
   }
 }

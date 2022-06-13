@@ -1,9 +1,7 @@
 import styles from './index.module.css';
-import { useState } from 'react';
-import { BsThreeDotsVertical } from 'react-icons/bs';
-import { BsTriangleFill, BsCheck2 } from 'react-icons/bs';
+import React, { useState } from 'react';
+import { BsThreeDotsVertical, BsTriangleFill, BsCheck2 } from 'react-icons/bs';
 import { observer } from 'mobx-react-lite';
-import workersStore from './../../store';
 import WorkerInfoModalWindow from './../../modal-windows/worker-info';
 import EditWorkerModalWindow from './../../modal-windows/edit-worker';
 import DeleteWorkerModalWindow from './../../modal-windows/delete-worker';
@@ -14,7 +12,8 @@ const Worker = observer(({
   worker, 
   clickAction = () => null, 
   isSelected = () => null, 
-  showFunctionMenu = false
+  showFunctionMenu = false,
+  mode = 'columns'
 }) => {
   const [functionsMenu, setFunctionMenu] = useState(false);
   const [isInfo, setIsInfo] = useState(false);
@@ -90,7 +89,7 @@ const Worker = observer(({
   }
 
   function isColumn() {
-    return workersStore.displayMode === 'columns';
+    return mode === 'columns';
   }
 
   return (
@@ -131,6 +130,7 @@ const Worker = observer(({
               </div>
             </div>
           </div>
+          
         }
         {isColumn() ?
           <div className={styles.photo} style={{backgroundImage: `url(${worker.photo})`}}></div>

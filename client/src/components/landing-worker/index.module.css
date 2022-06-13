@@ -1,34 +1,34 @@
 .workerBlock {
-  margin: 0 auto;
+  position: relative;
   width: 172px;
-  height: 236px;
-  border-radius: 0.7vw;
-  display: flex;
-  flex-direction: column;
-  background: #FFFFFF;
-  box-shadow: 0px 6px 25px rgba(95, 95, 95, 0.15);
-  overflow: hidden;
-  transition: width .7s, height .7s;
-  cursor: pointer;
-}
-
-.isSelected {
-  width: 178px;
   height: 256px;
-  border-radius: 0.7vw;
+  border-radius: 1vw;
+  box-shadow: 0px 8px 25px rgba(95, 95, 95, 0.15);
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
-  filter: drop-shadow(0px 6px 25px rgba(95, 95, 95, 0.15));
-  overflow: hidden;
-  transition: width .7s, height .7s;
+  cursor: pointer;
+  transition: margin 0.7s, box-shadow 0.7s;
+  background-color: #fff;
   margin: 0 auto;
 }
-
+.workerBlock:hover {
+  box-shadow: 0px 8px 25px rgba(120, 120, 120, 0.25);
+  transition: margin 0.7s, box-shadow 0.7s;
+}
+.isSelected {
+  box-shadow: 0px 6px 25px rgba(95, 95, 95, 0.15);
+  transition: margin 0.7s, box-shadow 0.7s;
+  margin: 15px 0 -15px 0;
+}
+.isSelected:hover {
+  box-shadow: 0px 6px 25px rgba(95, 95, 95, 0.15);
+  transition: margin 0.7s, box-shadow 0.7s;
+  margin: 15px 0 -15px 0;
+}
 .photo {
   width: 100%;
   height: 55%;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 1vw 1vw 0px 0px;
   background-size: cover;
   background-position: 50% 0%;
   background-repeat: no-repeat;
@@ -38,210 +38,44 @@
   image-rendering: -o-crisp-edges;
   image-rendering: -moz-crisp-edges;
 }
-
-.selectedPhoto {
-  width: 100%;
-  height: 55%;
-  background-size: cover;
-  background-position: 50% 0%;
-  background-repeat: no-repeat;
-  transition: .7s;
-  image-rendering: optimizeSpeed;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -o-crisp-edges;
-  image-rendering: -moz-crisp-edges;
-}
-
 .fullName {
-  height: 18px;
-  margin: 14px 0px 7px 5px;
-  white-space: nowrap;
+  margin: 14px 7px 7px 7px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 14px;
   color: #2E55A2;
 }
-
-.text {
-  height: 45%;
-}
-
 .specialty {
-  margin-left: 30px;
-  margin-bottom: 30px;
+  margin-left: 7px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 15px;
-  color: rgba(51, 51, 51, 0.7);
+  color: #333333b3;
 }
-
-@media screen and (max-width: 1100px) { 
-  .workerBlock {
-    width: 15vw;
-    height: 22.9vw;
-    border-radius: 5px;
-  }
-  .photo {
-    width: 100%;
-    height: 50%;
-    border-radius: 5px 5px 0px 0px;
-  }
-  .isSelected {
-    width: 17vw;
-    height: 24vw;
-  }
-
-  .selectedPhoto {
-    width: 100%;
-    height: 50%;
-  }
-
-  .fullName {
-    margin: 1.5vh 0px 0.5vh 0.5vw;
-    font-size: 12px;
-  }
-
-  .specialty {
-    margin-left: 3vw;
-    font-size: 1.3vw;
-  }
-}
-
-@media screen and (max-width: 800px) { 
-  .workerBlock {
-    width: 17vw;
-    height: 28vw;
-    border-radius: 1.5vw;
-  }
-  .photo {
-    width: 100%;
-    height: 50%;
-    border-radius: 5px 5px 0px 0px;
-  }
-  .isSelected {
-    width: 20vw;
-    height: 30vw;
-    border-radius: 5px;
-    display: flex;
-    border-radius: 1.5vw;
-  }
-  .selectedPhoto {
-    width: 100%;
-    height: 50%;
-  }
-  .fullName {
-    margin: 1vh 0px 0vh 1vw;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 12px;
-  }
-  .specialty {
-    margin-left: 27px;
-    font-size: 10px;
-    line-height: 13px;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-  .workerBlock {
-    width: 23vw;
-    height: 36vw;
-    border-radius: 2vw;
-  }
-  .photo {
-    width: 100%;
-    height: 55%;
-  }
-  .selectedPhoto {
-    width: 100%;
-    height: 55%;
-  }
-  .isSelected {
-    width: 25vw;
-    height: 38vw;
-    border-radius: 2vw;
-  }
-  .fullName {
-    margin: 1vh 0px 0vh 0.5vw;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13 px;
-    line-height: 12px;
-    color: #2E55A2;
-  }
-  .specialty {
-    margin-left: 20px;
-    line-height: 14px;
-    font-size: 11px;
-  }
+.specialty li {
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 500px) {
   .workerBlock {
-    width: 32vw;
-    height: 42vw;
-  }
-  .isSelected {
-    width: 32vw;
-    height: 45vw;
-  }
-  .fullName {
-    margin-left: 5px;
-    font-size: 13px;
-  }
-  .specialty {
-    margin-left: 23px;
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .workerBlock {
     width: 34vw;
-    height: 50vw;
-    border-radius: 2vw;
+    height: 53vw;
+    border-radius: 3vw;
   }
-  .isSelected {
-    width: 36vw;
-    height: 52vw;
-    border-radius: 2vw;
+  .photo {
+    height: 28vw;
   }
   .fullName {
-    margin-left: 5px;
+    margin: 1.5vw 1vw 1vw 1vw;
+    font-size: 3vw;
   }
   .specialty {
-    margin-left: 23px;
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .workerBlock {
-    width: 34vw;
-    height: 58vw;
-    border-radius: 2vw;
-  }
-  .isSelected {
-    border-radius: 2vw;
-  }
-  .isSelected {
-    width: 36vw;
-    height: 60vw;
-  }
-  .fullName {
-    font-size: 11px;
-    margin-left: 5px;
-    margin-bottom: 3px;
-    height: min-content;
-  }
-  .specialty {
-    margin-left: 23px;
-    font-size: 10px;
+    margin-left: 0.4vw;
+    font-size: 2.5vw;
+    line-height: 3vw;
   }
 }

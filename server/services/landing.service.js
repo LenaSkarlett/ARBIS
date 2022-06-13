@@ -26,6 +26,12 @@ class LandingService {
       if (!landingInfo) {
         return false;
       }
+
+      const timeToDelete = this.isPossibleDelete(landingInfo.createdat);
+      if (timeToDelete) {
+        this.deleteLanding(landingInfo.name);
+        return null;
+      }
   
       landingInfo.workers = JSON.parse(landingInfo.workers);
 
@@ -34,14 +40,49 @@ class LandingService {
         worker.experience = worker.experience.split('\n');
         worker.certificates = worker.certificates.split('\n');
         return worker;
-      })
-  
+      });
+      
       return landingInfo;
     } catch (error) {
       console.log(`[landing] the called page does not exist`);
       console.log(error);
       return null;
     }
+  }
+
+  async getLinks() {
+    try {
+      const links = (await postgres.query(
+        `SELECT name, createdat FROM landings`
+      )).rows;
+      return links;
+    } catch (error) {
+      console.log(`[landing] failed to send existing links`);
+      console.log(error);
+      return null;
+    }
+  }
+
+  async deleteLanding(name) {
+    try {
+      const links = (await postgres.query(
+        `DELETE FROM landings WHERE name = $1`,
+        [name]
+      )).rows;
+      return true;
+    } catch (error) {
+      console.log(`[landing] landing page deletion error`);
+      console.log(error);
+      return false;
+    }
+  }
+
+  isPossibleDelete(date) {
+    const halfYearInMs = 15768000000;
+    const testOneMinuteInMs = 60000;
+    const dateNow = new Date();
+    const differenceMs = dateNow.getTime() - date.getTime();
+    return differenceMs > testOneMinuteInMs;
   }
 }
 

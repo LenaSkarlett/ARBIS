@@ -1,6 +1,6 @@
 import styles from './index.module.css';
 import { HiPlus } from 'react-icons/hi';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import AddNewWorkerModalWindow from './../../modal-windows/add-new-worker';
 import workersStore from './../../store';
 

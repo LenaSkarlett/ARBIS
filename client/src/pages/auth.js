@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AuthorizationForm from './../components/authorization-form';
 
 const Auth = () => {
