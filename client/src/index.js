@@ -13,9 +13,10 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<AdminPanel />} />
+        <Route path='/page-not-found-404' element={<NotFound />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/:name' element={<Landing />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

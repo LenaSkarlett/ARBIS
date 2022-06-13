@@ -1,5 +1,5 @@
 .header {
-  padding-top: calc(3vw + 3vh + .5vmin);;
+  padding-top: calc(3vw + 3vh + .5vmin);
   margin: 0 auto;
   display: flex;
   flex-direction: column;

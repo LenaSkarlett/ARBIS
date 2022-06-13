@@ -5,8 +5,11 @@ import Media from 'react-media';
 import $api from './../../http';
 import LandingWorker from './../landing-worker';
 import Slider from '../slider';
+import { useNavigate } from 'react-router-dom';
 
 const IntroducingTeam = observer(({ pathName }) => {
+  const navigate = useNavigate();
+
   const [description, setDescription] = useState('');
   const [workers, setWorkers] = useState([]);
   const [selectedWorker, setSelectedWorker] = useState({});
@@ -25,7 +28,10 @@ const IntroducingTeam = observer(({ pathName }) => {
         setWorkers(response.data.workers);
         setSelectedWorker(response.data.workers[0]);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        navigate('/page-not-found-404');
+      });
   }
 
   return (
