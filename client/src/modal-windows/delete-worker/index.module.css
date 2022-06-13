@@ -117,9 +117,17 @@
   color: #333;
 }
 
+.cancel:hover {
+  background-color: #dfdfdf;
+}
+
 .continue {
-  background-color: #025294;
+  background-color: #2E55A2;
   color: #FCFDFF;
+}
+
+.continue:hover {
+  background-color: #294d96;
 }
 
 @media screen and (max-width: 450px) {
