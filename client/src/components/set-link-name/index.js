@@ -47,7 +47,7 @@ const SetLinkName = observer(() => {
             </abbr>
           </h1>
         </div>
-        <span className={styles.hostName}>{process.env.REACT_APP_BASE_URL}</span>
+        <span className={styles.hostName}>{process.env.REACT_APP_BASE_URL}/</span>
         <input 
           type="text" 
           className={landingExists ? styles.linkNameExists : styles.linkName} 

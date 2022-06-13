@@ -14,8 +14,7 @@ const DeleteWorkerModalWindow = ({ worker, status }) => {
     $api.delete(`/workers/${worker.id}`)
       .then(response => workersStore.delWorker(worker.id))
       .catch(error => console.log(error));
-
-    status(currentStatus => !currentStatus);
+    closeModalWindow();
   }
 
   function closeModalWindow() {
