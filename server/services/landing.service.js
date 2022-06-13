@@ -79,10 +79,9 @@ class LandingService {
 
   isPossibleDelete(date) {
     const halfYearInMs = 15768000000;
-    const testOneMinuteInMs = 60000;
     const dateNow = new Date();
     const differenceMs = dateNow.getTime() - date.getTime();
-    return differenceMs > testOneMinuteInMs;
+    return differenceMs > halfYearInMs;
   }
 }
 
