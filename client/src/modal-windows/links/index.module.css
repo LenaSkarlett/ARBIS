@@ -31,6 +31,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   margin: 40px 10px 20px auto;
+  padding-right: 30px;
   padding: 0 40px;
 }
 
@@ -45,10 +46,11 @@
 }
 
 .mainHeader {
+  white-space: nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4vw;
+  margin-bottom: 3vw;
   width: 100%;
   font-family: 'Montserrat';
   font-style: normal;
@@ -74,6 +76,7 @@
   font-weight: 400;
   font-size: 14px;
   color: #919191;
+  width: 100%;
 }
 
 .linksList tr td {
@@ -92,6 +95,7 @@
     width: 90%;
   }
   .data {
+    margin-left: 10px;
     padding: 0px 20px;
   }
   .buttons {

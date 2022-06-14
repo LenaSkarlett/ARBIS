@@ -32,9 +32,7 @@ const LinksModalWindow = ({ status }) => {
     const year = date.getFullYear();
     const month = addZeroBeginning(date.getUTCMonth() + 1);
     const day = addZeroBeginning(date.getDate());
-    const hour = addZeroBeginning(date.getUTCHours());
-    const minute = addZeroBeginning(date.getMinutes());
-    return `[${year}.${month}.${day}-${hour}:${minute}]`;
+    return `[${year}.${month}.${day}]`;
   }
 
 
@@ -52,7 +50,7 @@ const LinksModalWindow = ({ status }) => {
             <tbody>
               {links?.map((link, index) => 
                 <tr key={index}>
-                  <td style={{paddingRight: '10px'}}>{index + 1 + '.'}</td>
+                  <td style={{paddingRight: '10px', width: 'min-content'}}>{index + 1 + '.'}</td>
                   <td>
                     <a target="_blank" rel="noreferrer" href={process.env.REACT_APP_BASE_URL + '/' + link.name}>
                       <Media query={{ maxWidth: 500 }}>
@@ -64,7 +62,7 @@ const LinksModalWindow = ({ status }) => {
                       
                     </a>
                   </td>
-                  <td style={{paddingLeft: '10px', whiteSpace: 'nowrap'}} className={styles.date}>
+                  <td style={{paddingLeft: '10px', whiteSpace: 'nowrap', textAlign: 'right'}} className={styles.date}>
                     {' ' + getCreateDate(link.createdat)}
                   </td>
                 </tr>

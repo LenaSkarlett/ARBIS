@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 200px;
+  margin-bottom: 90px;
 }
 
 .description {
@@ -260,7 +260,7 @@
   }
 
   .ourteam {
-    margin-bottom: 91px;
+    margin-bottom: 50px;
   }
 
   .all_information_about_workers {
