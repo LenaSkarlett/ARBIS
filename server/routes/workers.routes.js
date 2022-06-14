@@ -9,7 +9,7 @@ const router = Router();
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    fs.mkdirSync('public');
+    fs.mkdirSync('public', {recursive: true});
     cb(null, 'public/');
   },
   filename: (req, file, cb) => {
