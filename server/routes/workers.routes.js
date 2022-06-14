@@ -3,15 +3,16 @@ import workersController from './../controllers/workers.controller.js';
 import path from 'node:path';
 import multer from 'multer';
 import authMiddleware from './../middlewares/auth.middleware.js';
+import fs from 'fs';
 
 const router = Router();
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public');
+    fs.mkdirSync('public');
+    cb(null, 'public/');
   },
   filename: (req, file, cb) => {
-    console.log(file);
     cb(null, Date.now() + path.extname(file.originalname));
   }
 });
