@@ -1,0 +1,10 @@
+# Зависимости
+/client/node_modules
+/server/node_modules
+
+# Фотографии
+/server/public/*
+
+# Переменные среды
+/client/.env
+/server/.env
