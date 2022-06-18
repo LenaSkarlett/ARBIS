@@ -75,9 +75,12 @@ const Workers = observer(() => {
             maxWidth: 999,
             slidesOnPage: 9
           },
-          {
+          workersStore.displayMode === 'columns' ? {
             maxWidth: 749,
             slidesOnPage: 4
+          } : {
+            maxWidth: 749,
+            slidesOnPage: 8
           }
         ]}
         reverse={false}
